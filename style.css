@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.slider {
+  display: flex;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  transition: all 0.5s;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.slide.active {
+  z-index: 50;
+  left: 50%;
+  transform: translateX(-50%) !important;
+  width: 50% !important;
+}
+
+.slide.hidden {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.btn {
+  .btn-next,
+  .btn-prev {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(
+      155.14deg,
+      rgba(255, 255, 255, 0) -2.13%,
+      rgba(255, 255, 255, 0.88) 136.58%
+    );
+    filter: drop-shadow(0px 3.24774px 39.7849px rgba(0, 7, 72, 0.12));
+    backdrop-filter: blur(10.1492px);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 50;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.2s ease;
+  }
+}
+.btn:active {
+  transform: scale(1.1);
+}
+.btn-prev {
+  top: 45%;
+  left: 10px;
+}
+
+.btn-next {
+  top: 45%;
+  right: 10px;
+}
